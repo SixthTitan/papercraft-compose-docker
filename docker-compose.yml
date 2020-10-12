@@ -1,0 +1,18 @@
+version: '3'
+services:
+  minecraft:
+    container_name: minecraft
+    hostname: minecraft
+    image: laurensarah2022/paper-craft:latest
+    ports:
+      - 25565:25565
+      - 8123:8123  
+    environment:
+      - MEMORYSIZE=2G
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
+      - AWS_DEFAULT_REGION=
+    restart: unless-stopped
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /home/ubuntu/minecraft:/data:rw
